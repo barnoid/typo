@@ -139,7 +139,7 @@ class ArticlesController < ContentController
       path = url_root + path unless url_root.nil? or path[0,url_root.length] == url_root
       redirect_to path, :status => 301
     else
-      render :text => "Page not found", :status => 404
+	  return error(_("Page not found"), :status => 404)
     end
   end
 
@@ -176,7 +176,7 @@ class ArticlesController < ContentController
     if(@page = Page.find_by_name(params[:name].map { |c| c }.join("/"))) && @page.published?
       @page_title = @page.title
     else
-      render :nothing => true, :status => 404
+      return error(_("Page not found"), :status => 404)
     end
   end
 
