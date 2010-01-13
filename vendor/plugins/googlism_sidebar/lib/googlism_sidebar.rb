@@ -8,7 +8,7 @@ class GooglismSidebar < Sidebar
 
   def getquote
     quote = ""
-    File.open('/home/barney/public_html/typo-5.3/vendor/plugins/googlism_sidebar/googlism-cache') do |file|
+    File.open(File.dirname(__FILE__) + '/googlism-cache') do |file|
       lines = file.readlines
       line = lines[rand(lines.length)]
       quote = line.split(">")[0]
