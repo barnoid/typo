@@ -45,7 +45,7 @@ class ArticlesController < ContentController
 
   def search
     @articles = this_blog.articles_matching(params[:q], :page => params[:page], :per_page => @limit)
-    return error(_("No posts found..."), :status => 200) if @articles.empty?
+    return error(_("No posts found"), :status => 200) if @articles.empty?
     respond_to do |format|
       format.html { render :action => 'search' }
       format.rss { render :partial => "articles/rss20_feed", :object => @articles }
@@ -210,7 +210,7 @@ class ArticlesController < ContentController
       format.xml  { render_feed('atom') }
     end
   rescue ActiveRecord::RecordNotFound
-    error("Post not found...")
+    error("Post not found")
   end
 
   def article_meta
@@ -240,7 +240,7 @@ class ArticlesController < ContentController
     headers["Content-Type"] = "text/html; charset=utf-8"
   end
 
-  def render_paginated_index(on_empty = _("No posts found..."))
+  def render_paginated_index(on_empty = _("No posts found"))
     return error(on_empty, :status => 200) if @articles.empty?
     if this_blog.feedburner_url.empty?
       auto_discovery_feed(:only_path => false)
