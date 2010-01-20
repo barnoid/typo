@@ -23,7 +23,7 @@ class PageCache
 
 
   def self.sweep_theme_cache
-    self.zap_pages(%w{images/theme/* stylesheets/theme/* javascripts/theme/*})
+    #self.zap_pages(%w{images/theme/* stylesheets/theme/* javascripts/theme/*})
   end
 
   def self.zap_pages(paths)
