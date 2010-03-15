@@ -577,6 +577,19 @@
 	border: none;
 }
 
+#sidebar #sform {
+        margin-left: -5px;
+        margin-bottom: 15px;
+}
+
+#sidebar #sform input {
+        padding: 0;
+}
+
+#sidebar #sform #q {
+        width: 110px;
+}
+
 /*--------------------------------------------------------------
  Footer
  --------------------------------------------------------------*/
@@ -619,6 +632,10 @@
 	margin: 0; padding: 0 0 0 1em;
 	display: inline; 
 }
+
+/*--------------------------------------------------------------
+ barnoid stuff
+ --------------------------------------------------------------*/
 
 #googlism {
   margin-top: 15px;
