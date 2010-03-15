@@ -457,6 +457,14 @@
 	padding: 3px;
 }
 
+#content .floatright {
+        clear: right;
+        float: right;
+        position: relative;
+        margin: 0 0 .5em .5em;
+        border: 0;
+}
+
 /*--------------------------------------------------------------
  Sidebar
  --------------------------------------------------------------*/
