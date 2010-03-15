@@ -1,7 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
 
   # default
-  map.root :controller  => 'articles', :action => 'index'
+  map.root :controller  => 'articles', :action => 'view_page', :name => 'home'
+  #map.root :controller  => 'articles', :action => 'index'
+
+  map.connect 'blog', :controller => 'articles', :action => 'index'
 
   # TODO: use only in archive sidebar. See how made other system
   map.articles_by_month ':year/:month', :controller => 'articles', :action => 'index', :year => /\d{4}/, :month => /\d{1,2}/

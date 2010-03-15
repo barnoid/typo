@@ -46,12 +46,12 @@
 #content h5 { 
 	font-family: arial, sans-serif; 
 	letter-spacing: -1px;
+	color: #5bbbd8;
 }
 
 #content h1 { 
 	font-size: 30px;
 	margin: 0 0 0.3em;
-	color: #5bbbd8;
 	font-weight: normal;
 }
 
@@ -73,9 +73,9 @@
 
 #content h5 {
 	font-size: 18px;
-	background: #ffd;
-	margin: 1.2em 0 0.3em;	
-	border-bottom: 1px dotted #aaa;
+/*	background: #ffd; */
+	margin: 0px;	
+/*	border-bottom: 1px dotted #aaa; */
 }
 
 #content p {
@@ -366,6 +366,22 @@
 
 
 /* Comments and Trackbacks */
+
+#content .commentsbox { 
+    border: solid black 1px;
+    padding: 15px;
+    margin-top: 10px;	
+    background: #b6d0d8;
+}
+
+#content .commentsbox h5 {
+	background: #fff;
+	padding: 3px;
+	margin-left: -3px;
+	margin-right: -3px;
+	margin-bottom: 3px;
+}
+
 #content ol.comments,
 #content ol.trackbacks {
 	list-style-type: none;
@@ -374,8 +390,9 @@
 
 #content .comment,
 #content .trackback {
-	border: 2px solid #ddd;
+	border: 1px solid #ddd;
 	margin: 0 0 1.5em; padding: 1em;
+	background: #fff;
 }
 
 #content .comment.preview { 
@@ -415,11 +432,16 @@
 #content form.comments {
 	background: #f2f2f2;
 	border-top: 1px solid #ddd;
-	padding: 1em 0.5em;
+	padding: 0.5em 0.5em;
+}
+
+#content form.comments p {
+	margin-bottom: 5px;
 }
 
 #content form.comments fieldset { 
 	border: none;
+	padding-bottom: 0px;
 }
 
 #content form.comments legend { 
@@ -446,6 +468,10 @@
 	padding-top: 15px;
 	margin-right: 10px;
 	background: #b6d0d8 url(../../images/theme/barnoid2.2-2.png) no-repeat -13px -23px;
+}
+
+#sidebar p {
+	margin-right: 10px;
 }
 
 #sidebar h3 { 
@@ -587,8 +613,9 @@
 }
 
 #googlism {
-  padding-bottom: 10px;
-  margin-right: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  margin-right: 20px;
   font-weight: bold;
   font-size: 120%;
 }
@@ -602,6 +629,7 @@
   content: url(../../images/theme/closequote.png);
   padding-left: 5px;
   padding-top: 2px;
+  float: right;
 }
 
 #content ul.listbox {
@@ -613,22 +641,23 @@
   padding: 5px;
   list-style: none;
   border-bottom: 1px dotted gray;
-  float: left;
   width: 100%;
 }
 
-#content ul.listbox li a {
+#content ul.listbox li a.title {
   font-size: 140%;
   font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
 }
 
 #content ul.listbox li p {
-  margin-top: 5px;
-  maigin-left: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
 }
 
 #content ul.listbox li img {
-  float: left;
+/*  float: left; */
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -668,5 +697,65 @@
   font-size: 130%;
   font-weight: bold;
   margin-left: 5px;
+}
+
+.moretag {
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Following based on http://matthewjamestaylor.com/blog/perfect-3-column.htm */
+
+/* column container */
+.colmask {
+  position:relative;	/* This fixes the IE7 overflow hidden bug */
+/*  clear:both;*/
+  float:left;
+  width:100%;			/* width of whole page */
+  overflow:hidden;		/* This chops off any overhanging divs */
+}
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+  float:left;
+  width:100%;			/* width of page */
+  position:relative;
+}
+.col1,
+.col2,
+.col3 {
+  float:left;
+  position:relative;
+  padding:0 0 1em 0;	/* no left and right padding on columns, we just make them narrower instead 
+						only padding top and bottom is included here, make it whatever value you need */
+  overflow:hidden;
+}
+/* 3 Column settings */
+.threecol {
+  background:#fff;		/* right column background colour */
+}
+.threecol .colmid {
+  right:33%;			/* width of the right column */
+  background:#fff;		/* center column background colour */
+  border-right: dashed #ccc 2px;
+}
+.threecol .colleft {
+  right:33%;			/* width of the middle column */
+  background:#fff;	/* left column background colour */
+  border-right: dashed #ccc 2px;
+}
+.threecol .col1 {
+  width:29%;			/* width of center column content (column width minus padding on either side) */
+  left:102%;			/* 100% plus left padding of center column */
+}
+.threecol .col2 {
+  width:29%;			/* Width of left column content (column width minus padding on either side) */
+  left:40%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col3 {
+  width:29%;			/* Width of right column content (column width minus padding on either side) */
+  left:77%;			/* Please make note of the brackets here:
+						(100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
 }
 

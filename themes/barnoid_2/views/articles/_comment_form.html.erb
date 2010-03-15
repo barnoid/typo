@@ -1,3 +1,4 @@
+<div id="commentformbox" style="display: none;">
 <% form_remote_tag :url      => @article.comment_url,
                     :position => :bottom,
                     :update   => {:success => 'commentList'},
@@ -51,3 +52,4 @@
   </p>
 </fieldset>
 <% end %>
+</div>

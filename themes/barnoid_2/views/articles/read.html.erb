@@ -30,14 +30,17 @@
   <% end -%>
 <% end -%>
 
+<div class="commentsbox">
 <% if @article.allow_comments? or @article.published_comments.size > 0 -%>
 
-  <% if !@article.comments_closed? and @article.published_comments.size > 0 %>
+  <% if @article.published_comments.size > 0 %>
     <h5><a name="comments"><%= _("Comments") %></a></h5>
+  <% else -%>
+    <h5><a name="comments"><%= _("No Comments") %></a></h5>
   <% end -%>
 
   <% unless @article.comments_closed? %>
-    <p><a href="#commentform"><%= _("Leave a comment") %></a></p>
+    <p><%= link_to_function(_("Leave a comment") + " &#187;", "Effect.toggle('commentformbox', 'blind', {duration: .3})") %></p>
   <% end -%>
 
   <div id="comments_div">
@@ -46,3 +49,4 @@
 <% end -%>
 
 <%= render :partial => 'comment_form' unless @article.comments_closed? %>
+</div>

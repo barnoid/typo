@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.plugins = [ :localization, :all ]
   
   config.load_paths += %W(
+    vendor/barnoid
     vendor/rubypants
     vendor/akismet
     vendor/flickr
