@@ -141,7 +141,6 @@ class Admin::ContentController < Admin::BaseController
     get_or_build_article
 
     @macros = TextFilter.available_filters.select { |filter| TextFilterPlugin::Macro > filter }
-    @article.published = true
 
     # TODO Test if we can delete the next line. It's delete on nice_permalinks branch
     params[:article] ||= {}
