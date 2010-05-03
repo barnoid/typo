@@ -729,6 +729,15 @@
   margin-top: 10px;
 }
 
+div.CodeRay {
+  margin-bottom: 1em;
+}
+
+.commandline {
+  font-family: monospace;
+  font-weight: bold;
+}
+
 /* Following based on http://matthewjamestaylor.com/blog/perfect-3-column.htm */
 
 /* column container */
