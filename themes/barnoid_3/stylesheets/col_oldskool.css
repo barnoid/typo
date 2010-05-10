@@ -1,0 +1,20 @@
+body { background-color: #5bbbd8; }
+
+#sidebar { background-color: #5bbbd8; }
+
+a:link,  a:visited { color: #a44427; }
+a:hover, a:active  { color: #ff6a3d; }
+
+#content h1,
+#content h2,
+#content h3 { 
+  color: #5bbbd8; 
+}
+
+#sidebar h1,
+#sidebar h2,
+#sidebar h3 { 
+  color: #000000;
+}
+
+#content .commentsbox { background-color: #5bbbd8; } 

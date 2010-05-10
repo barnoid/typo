@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title><%=h page_title %></title>
+  <%= page_header %>
+  <%= stylesheet_link_tag '/stylesheets/theme/application.css', :media => 'all' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/col_default.css', :media => 'all', :title => 'Default' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/col_lunar.css', :media => 'all', :rel => 'alternate stylesheet', :title => 'Lunar Landscape 6' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/col_green.css', :media => 'all', :rel => 'alternate stylesheet', :title => 'Greens' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/col_oldskool.css', :media => 'all', :rel => 'alternate stylesheet', :title => 'Old Skool' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/col_wasp.css', :media => 'all', :rel => 'alternate stylesheet', :title => 'Wasp' %>
+  <%= stylesheet_link_tag '/stylesheets/theme/col_hotpink.css', :media => 'all', :rel => 'alternate stylesheet', :title => 'Hot Pink!' %>
+  <%= javascript_include_tag '/javascripts/theme/swapstyle.js' %>
+</head>
+
+<body>
+<div id="container">
+  <div id="page">
+    <div id="sidebar">
+      <!-- sidebar components -->
+      <%= render_sidebars %>
+    </div>
+
+    <div id="content">
+      <%= @content_for_layout %>
+      <%= javascript_tag 'show_dates_as_local_time()' %>
+    </div>
+
+    <br style="clear:both;" />
+  </div>
+
+  <div id="footer">
+    <hr />
+    <p><%= link_to this_blog.blog_name, this_blog.base_url %></p>
+    <ul>
+      <li>
+        <%= _("Powered by %s", link_to('typo', 'http://typosphere.org')) %> /
+        <%= _("styled by %s", link_to('barnoid', 'http://barnoid.org.uk'))%>
+      </li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
