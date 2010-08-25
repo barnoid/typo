@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 
   def error(message = "Record not found...", options = { })
     @message = message.to_s
-    render :template => 'articles/error', :status => options[:status] || 404
+    render :template => 'articles/error.html', :status => options[:status] || 404
   end
 
   def fire_triggers
