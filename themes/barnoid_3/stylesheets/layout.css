@@ -26,45 +26,21 @@ body {
 
 #content {
 	padding-left: 210px;
+	text-align: left;
 }
 
 #sidebar {
 	width: 185px;
 	height: 100%
 	vertical-align: top;
+	position: absolute;
+	top: 22px;
 }
 
 #footer {
 	height: 40px; 
 	margin: 10px 0 0; padding: 10px 0 0;
 	clear:both; 
+	margin-left: 210px;
 }
 
-/*--------------------------------------------------------------
- Sidebar Alignment: you can have left or right
- --------------------------------------------------------------*/
-
-/* BEGIN: Right Sidebar */
-#sidebar {
-	/*float: right; text-align: left;
-	padding-left: 10px; 
-	border-left: 1px dotted #ddd; */
-}
-#content {
-  /*float: left; */
-	/*padding-left: 5px;*/
-}
-/* END: Right Sidebar */
-
-
-/* BEGIN: Left Sidebar */
-#sidebar {
-	float: left; text-align: left;
-/*	padding-right: 20px; 
-	border-right: 1px dotted #ddd; */
-}
-
-#content {
-	/*float: right; text-align: left;*/
-}
-/* END: Left Sidebar */

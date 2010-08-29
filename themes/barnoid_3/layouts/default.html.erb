@@ -16,14 +16,15 @@
 <body>
 <div id="container">
   <div id="page">
-    <div id="sidebar">
-      <!-- sidebar components -->
-      <%= render_sidebars %>
-    </div>
 
     <div id="content">
       <%= @content_for_layout %>
       <%= javascript_tag 'show_dates_as_local_time()' %>
+    </div>
+
+    <div id="sidebar">
+      <!-- sidebar components -->
+      <%= render_sidebars %>
     </div>
 
     <br style="clear:both;" />
