@@ -3,6 +3,8 @@
 <head>
   <title><%=h page_title %></title>
   <%= page_header %>
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="http://barnoid.org.uk/articles.atom" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://barnoid.org.uk/articles.rss" />
   <%= stylesheet_link_tag '/stylesheets/theme/application.css', :media => 'all' %>
   <%= stylesheet_link_tag '/stylesheets/theme/col_default.css', :media => 'all', :title => 'Default' %>
   <%= stylesheet_link_tag '/stylesheets/theme/col_lunar.css', :media => 'all', :rel => 'alternate stylesheet', :title => 'Lunar Landscape 6' %>
