@@ -7,11 +7,11 @@ class GooglismSidebar < Sidebar
   
 
   def getquote
-    quote = ""
-    File.open(File.dirname(__FILE__) + '/googlism-cache') do |file|
+    quote = []
+    File.open(File.dirname(__FILE__) + '/../../../barnoid/googlism-cache') do |file|
       lines = file.readlines
       line = lines[rand(lines.length)]
-      quote = line.split(">")[0]
+      quote = line.split("<>")
     end
     return quote
   end

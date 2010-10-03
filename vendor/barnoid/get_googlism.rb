@@ -1,4 +1,4 @@
-class GoogleTest
+class GetGoogleism
 
 require 'rubygems'
 require 'json'
@@ -6,8 +6,9 @@ require 'net/http'
 require 'cgi'
 
 verbose = false
+quiet = false
 
-KEEP = 150
+KEEP = 200
 CACHEFILE = "googlism-cache"
 
 results = {}
@@ -36,7 +37,7 @@ url = "/ajax/services/search/web?v=1.0&q=\"barney+#{verb}\"&rsz=large&start=#{st
 puts url if verbose
 puts if verbose
 
-response = @site.get(url, 'User-Agent' => "googletest (Ruby Net::HTTP)", 'Referer' => "http://barnoid.org.uk/")
+response = @site.get(url, 'User-Agent' => "getgoogleism (Ruby Net::HTTP)", 'Referer' => "http://barnoid.org.uk/")
 data = JSON.parse(response.body)
 
 p data if verbose
@@ -51,6 +52,12 @@ data['responseData']['results'].each { |result|
   puts content if verbose
   while mat = /(barney #{verb} .+?(!+|\?+|\. |\.\.\.|$))/i.match(content) do
     bis = mat.to_s
+    bis.gsub!(/\s+$/, "") # remove trailing whitespace
+    # discard the ones ending ...
+    if /\.\.\.$/.match(bis) then
+	  content = mat.post_match
+      next
+    end
     # match unmatched quotes
     if mat.to_s.scan(/"/).size % 2 != 0 then
       if mat.pre_match.scan(/"/).size % 2 != 0 then
@@ -66,12 +73,12 @@ data['responseData']['results'].each { |result|
     elsif brackets > 0 then
       bis = bis + (")" * brackets)
     end
-    puts bis
-	results[bis] = date
-	puts result["unescapedUrl"].gsub(/<>/, "")
-	urls[bis] = result["unescapedUrl"].gsub(/<>/, "")
-	puts
-	content = mat.post_match
+    puts "|#{bis}|" if not quiet
+    results[bis] = date
+    puts result["unescapedUrl"].gsub(/<>/, "") if not quiet
+    urls[bis] = result["unescapedUrl"].gsub(/<>/, "")
+    puts if not quiet
+    content = mat.post_match
   end
 }
 

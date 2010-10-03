@@ -1,1 +1,9 @@
-<div id="googlism"><%= @sidebar.getquote %></div>
+<div id="googlism">
+  <div id="googlism_quote">
+    <% quote = @sidebar.getquote %>
+    <%= link_to_function(quote[0], "Effect.toggle('googlism_details', 'blind', {duration: .3})") %>
+  </div>
+  <div id="googlism_details" style="display: none;">
+    <a href="<%= quote[1] %>">this quote's source</a> <br/> <a href="/googlism">what's this?</a>
+  </div>
+</div>
