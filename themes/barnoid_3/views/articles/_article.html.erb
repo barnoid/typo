@@ -28,6 +28,7 @@
   <ul class="meta">
     <%= content_tag(:li, category_links(article), :class => 'categories') unless article.categories.empty? %>
     <%= content_tag(:li, tag_links(article), :class => 'tags') unless article.tags.empty? %>
+    <%= content_tag(:li, geotag_link(article), :class => 'geotag') unless article.geotag.nil? %>
     <li><%= _("Meta") %>
       <%= trackbacks_link(article) << ',' if article.allow_pings? %>
       <%= comments_link(article) << ',' if article.allow_comments? %>

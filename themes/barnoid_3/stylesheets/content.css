@@ -747,6 +747,23 @@ div.CodeRay {
   font-weight: bold;
 }
 
+.flickr_desc {
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.exif_table {
+  font-size: 75%;
+  margin: 5px;
+}
+
+.exif_table td {
+  background-color: #eee;
+  padding: 2px;
+}
+
+
 /* Following based on http://matthewjamestaylor.com/blog/perfect-3-column.htm */
 
 /* column container */
