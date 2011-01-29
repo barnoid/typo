@@ -38,6 +38,7 @@ module ContentHelper
     returning code = [] do
       code << category_links(article)   unless article.categories.empty?
       code << tag_links(article)        unless article.tags.empty?
+      code << geotag_link(article)        unless article.geotag.nil?
       code << comments_link(article)    if article.allow_comments?
       code << trackbacks_link(article)  if article.allow_pings?
     end.join("&nbsp;<strong>|</strong>&nbsp;")
@@ -49,6 +50,10 @@ module ContentHelper
 
   def tag_links(article)
     _("Tags") + " " + article.tags.map { |tag| link_to tag.display_name, tag.permalink_url, :rel => "tag"}.sort.join(", ")
+  end
+
+  def geotag_link(article)
+    _("Geotag") + " " + link_to(article.geotag.name, "http://www.openstreetmap.org/?lat=#{article.geotag.lat}&lon=#{article.geotag.lon}&zoom=#{article.geotag.accuracy}&layers=M")
   end
 
   def next_link(article)
