@@ -53,7 +53,7 @@ module ContentHelper
   end
 
   def geotag_link(article)
-    _("Geotag") + " " + link_to(article.geotag.name, "http://www.openstreetmap.org/?lat=#{article.geotag.lat}&lon=#{article.geotag.lon}&zoom=#{article.geotag.accuracy}&layers=M")
+    _("Geotag") + " " + link_to(article.geotag.name, "http://www.openstreetmap.org/?lat=#{article.geotag.lat}&lon=#{article.geotag.lon}&zoom=#{article.geotag.accuracy}&layers=M&mlat=#{article.geotag.lat}&mlon=#{article.geotag.lon}")
   end
 
   def next_link(article)
